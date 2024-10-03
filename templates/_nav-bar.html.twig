@@ -1,0 +1,7 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+    <a class="navbar-brand" href="{{ path('app_home')}}">{{ 'nav.Title'|trans({}, 'header-footer')|raw }}</a>
+    <a class="navbar-brand active" href="{{ path('app_home')}}">{{ 'nav.page.Home'|trans({}, 'header-footer')|raw }}</a>
+    {% if app.user.roles is defined and "ROLE_ADMIN" in app.user.roles %}
+        <a class="navbar-brand active" href="{{ path('app_caisse')}}">Caisse</a>
+    {% endif %}
+</nav>

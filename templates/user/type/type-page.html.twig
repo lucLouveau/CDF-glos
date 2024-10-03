@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ 'Title'|trans({}, 'home-page')|raw }} {% endblock %}
+{% block stylesheets %}
+<link rel="stylesheet" href="{{asset('styles/home/type.css')}}">
+{% endblock %}
+{% block body %}
+
+<table>
+    {% for produit in produits %}
+        <tr><td>
+        <img src="{{ asset("image/#{type}/coca.jpg") }}" 
+        alt="{{ produit.designation}}"
+        class="{{ produit.stock == 0 ? 'vide' }}"/>
+        </td><td>{{ produit.designation}}</td><td>Encore {{produit.stock}} en stock</td></tr>
+    {% endfor %}
+</table>
+{% endblock %}

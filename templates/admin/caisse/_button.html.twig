@@ -1,0 +1,7 @@
+<div id="button_{{produit.designation}}" class="d-flex flex-column text-center{{ produit.stock is not null and produit.stock == 0 ? ' bg-dark text-light'}}">
+    <p>{{produit.designation}}</p>
+    {% if produit.stock is not null %}
+        <p>stock: {{produit.stock}}</p>
+    {% endif %}
+    <p>{{produit.prix}}€</p>
+</div>

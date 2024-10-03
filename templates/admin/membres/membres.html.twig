@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ 'Title'|trans({}, 'home-page')|raw }} {% endblock %}
+{% block stylesheets %}
+{% endblock %}
+{% block body %}
+
+
+<div class="d-flex flex-wrap gap-3 justify-content-around align-items-center container mt-3">
+{% for produit in produits %}
+    {% include "home/_tuile-produits.html.twig" with {'produit': produit} %}
+{% endfor %}
+
+</div>
+{% endblock %}

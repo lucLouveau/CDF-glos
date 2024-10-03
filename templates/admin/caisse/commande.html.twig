@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Caisse {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('styles/color.css')}}">
+    <link rel="stylesheet" href="{{asset('styles/caisse/buttons.css')}}">
+    <link rel="stylesheet" href="{{asset('styles/caisse/commande.css')}}">
+{% endblock %}
+{% block body %}
+    <div id="button_tab">
+        <div id="select_all" class="d-flex">
+            {% for type in types %}
+                    {% if type.nom != "rien" %}{% include "admin/caisse/_tab-button.html.twig" with {'type': type.nom} %}{% endif %}
+            {% endfor %}
+        </div>
+        <div id="boutonProduits">
+            {% for produitsType in produits %}
+                {% if produitsType[0].type.nom != "rien" %}
+                    <div id="buttons_{{ produitsType[0].type.nom|replace({" ":"_"}) }}" class="d-flex justify-content-around">
+                        {% for produit in produitsType %}
+                            {% include "admin/caisse/_button.html.twig" with {'produit': produit} %}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+    <div id="commande">
+        <table>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <div id="resume">
+        <p>Total: 0€</p>
+        <p>Gobelets</p>
+        <button>Valider le panier</button>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{asset('js/gestionButton.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,19 @@
+#commande{
+    width: 100vw;
+    border-radius: 20px;
+    height: calc((100vh - 56px) / 3 - 20px);
+    overflow-y: scroll;
+    background-color: var(--admin-first-div);
+}
+#commande table{
+    width: 100%;
+    color: aliceblue;
+}
+#commande tr{
+    background-color: var(--admin-select-div);
+    display: flex;
+}
+#commande td{
+    flex: 1 1;
+    text-align: center;
+}

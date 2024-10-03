@@ -1,0 +1,76 @@
+/* button tab styling */
+#button_tab{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    border-radius: 20px;
+    height: calc((100vh - 56px) / 3 - 20px);
+    overflow: hidden;
+}
+@media screen and (min-width: 1400px){
+    #button_tab{
+        width: 1400px;
+        margin: auto;
+    }
+}
+#select_all{
+    flex-wrap: wrap;
+    width: 100%;
+    background-color: var(--admin-first-div);
+    color: aliceblue;
+}
+#select_all>div{
+    min-width: fit-content;
+    flex: 1 ;
+}
+#select_all>div.select_active{
+    border-radius: 20px 20px 0 0;
+}
+
+#boutonProduits>div, #select_all>div.select_active{
+    background-color: var(--admin-select-div)
+}
+#boutonProduits{
+    width: 100%;
+    height: calc(100% - 56px);
+}
+#boutonProduits>div{
+    height: 100%;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    overflow-y: scroll;
+}
+#boutonProduits>div>div{
+    max-width: 150px;
+    min-width: fit-content;
+    height: 75px;
+    width: 25%;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    overflow: hidden;
+}
+#boutonProduits>div>div>p{
+    margin: 0;
+    padding: 0 5px;
+}
+
+/* button color */
+#buttons_divers>div{
+    background-color: rgb(110, 248, 129);
+}
+#buttons_sucré>div{
+    background-color: rgb(170, 105, 255);
+}
+#buttons_salé>div{
+    background-color: rgb(255, 246, 127);
+}
+#buttons_boisson_froide>div{
+    background-color: rgb(0, 183, 255);
+}
+#buttons_boisson_chaude>div{
+    background-color: rgb(255, 80, 80);
+}

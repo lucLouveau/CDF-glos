@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ 'Title'|trans({}, 'home-page')|raw }} {% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{asset('styles/home/home.css')}}">
+{% endblock %}
+{% block body %}
+
+
+<div class="d-flex flex-wrap">
+    {% for type in types %}
+        {% if type.nom not in ["rien", "divers"] %}
+            <a href="{{ path("app_type", {'type':type.id}) }}">
+                <img src="{{ asset("image/#{type.nom|replace({' ':''}) }.png") }}" alt="{{ type.nom|replace({' ':''}) }}"/>
+                <span>{{type.nom}}</span>
+            </a>
+        {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}
